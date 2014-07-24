@@ -57,6 +57,7 @@
 }
 
 - (void)testThatPriceOfDiscountedVodkaIs18Dollars {
+
     self.appleHandler.getsDiscount = YES;
     NSUInteger cost = [self.appleHandler dollarCostForAppleFlavoredVodka];
     XCTAssertEqual(cost, 18, @"Discounted vodka should be $18.");
