@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface StuffRememberer : NSObject
+@property (nonatomic, strong) NSMutableArray *memorableArray;
+@property (nonatomic, copy) NSMutableArray *copycatArray;
+@property (nonatomic,strong) NSNumber *floatToRemember;
 
 /*
  
