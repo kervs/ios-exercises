@@ -51,7 +51,8 @@ for  i in 1...10{
 // Use a half-closed range loop to print 1 - 10, inclusively
 // WORK HERE
 var num2 = 1
-for  i in 1..<10{
+for  i in 1..<10 {
+    println("\(i)")
     num2++
 }
 let worf = [
@@ -72,18 +73,13 @@ let characters = [worf, picard]
 func favoriteDrinksArrayForCharacters(characters:Array<Dictionary<String, String>>) -> Array<String> {
     // return an array of favorite drinks, like ["prune juice", "tea, Earl Grey, hot"]
     // WORK HERE
-    var favoriteDrink : [String] = []
-    for dict in characters{
-        for (key, value) in dict{
-            if key == "favorite drink" {
-        favoriteDrink += value
-                
-            }
-        
+    var favoriteDrinks : [String] = []
+    for dict in characters {
+        if let favoriteDrink = dict["favorite drink"] {
+            favoriteDrinks += favoriteDrink
+        }
     }
-    
-}
-    return favoriteDrink
+    return favoriteDrinks
 }
 
 let favoriteDrinks = favoriteDrinksArrayForCharacters(characters)
@@ -101,13 +97,13 @@ Functions
 let theStrings = ["milk", "eggs", "bread", "challah"]
 
 
-func mergeArray (strings:[String])->String {
+func mergeArray (strings:[String])-> String {
 
     var mergeString = String()
-    for i in 0 ..< strings.count {
+    for i in 0 ..< strings.count - 1 {
         mergeString += "\(strings[i]);"
     }
-   mergeString = mergeString.substringToIndex(mergeString.endIndex.predecessor())
+    mergeString += "\(strings[strings.count - 1])"
     return mergeString
 }
 
